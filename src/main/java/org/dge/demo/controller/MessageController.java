@@ -19,7 +19,9 @@ public class MessageController {
 
     @PostMapping
     public Message add( @RequestBody Long sessionId, @RequestBody Message msg) {
+
         msg.setSessionId(sessionId);
+
         return service.create(msg);
     }
 

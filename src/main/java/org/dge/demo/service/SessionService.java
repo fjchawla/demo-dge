@@ -16,6 +16,7 @@ public class SessionService {
     public Session create(Session s) { return repo.save(s); }
     public Session rename(Long id, String name) throws Exception{
         Session s = repo.findById(id).orElseThrow(() -> new Exception("Session not found"));
+
         log.info("Setting session {} name {}",s.getId(),s.getSessionName());
         s.setSessionName(name);
         return repo.save(s);

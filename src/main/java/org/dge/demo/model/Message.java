@@ -20,7 +20,8 @@ public class Message {
     @GeneratedValue
     private Long id;
     private Long sessionId;
-    private String sender; // "user" or "assistant"
+    private String sender;
+
 
     @Lob
     private String content;
