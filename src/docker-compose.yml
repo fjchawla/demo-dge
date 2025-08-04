@@ -20,6 +20,6 @@ services:
       - DATABASE_NAME=chatdb
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=password
-      - API_KEY=supersecret123
+      - API_KEY=my-secret-key-dge-123
     depends_on:
       - db
