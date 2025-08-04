@@ -7,6 +7,8 @@ import org.dge.demo.service.MessageService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,5 +31,13 @@ public class MessageController {
     @GetMapping
     public List<Message> get(@PathVariable Long sessionId) {
         return service.getMessages(sessionId);
+    }
+
+
+    @GetMapping
+    public Page<Message> get(@PathVariable Long sessionId,
+                             @RequestParam(defaultValue = "0") int page,
+                             @RequestParam(defaultValue = "10") int size) {
+        return service.getMessages(sessionId, page, size);
     }
 }
